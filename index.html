@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JOBGRADE | 채용정보</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><linearGradient id="jg-g" x1="4" y1="2" x2="28" y2="30" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#3b82ff"/><stop offset="1" stop-color="#1745c4"/></linearGradient></defs><symbol id="jg-mark" viewBox="0 0 32 32"><rect width="32" height="32" rx="9" fill="url(#jg-g)"/><path d="M20 7v11.5c0 3.2-2.3 5.5-5.5 5.5-2.2 0-4-.9-5.2-2.6" fill="none" stroke="#fff" stroke-width="3.6" stroke-linecap="round"/><circle cx="11" cy="9.5" r="2.2" fill="#a9c9ff"/></symbol></svg>
+  <div class="topline">
+    <div class="wrap topnav"><span>개인회원</span><span>기업서비스</span><span>고객센터</span></div>
+  </div>
+  <header class="wrap header">
+    <a class="brand" href="#" id="homeLink" aria-label="JOBGRADE 홈"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 32 32"><use href="#jg-mark"/></svg><span class="brand-word"><b>JOB</b>GRADE</span></a>
+    <button class="menu-button" aria-label="메뉴">☰</button>
+    <nav class="header-links"><a class="active" href="#jobs">채용정보</a><a href="#jobs">취업축하금</a><a href="#jobs">신입·인턴</a><a href="#jobs">커리어</a><a href="#jobs">기업·연봉</a><a href="#jobs">커뮤니티</a><a href="#jobs">취업자료</a></nav>
+    <div class="account"><button class="plain" id="loginBtn">로그인</button><button class="outline" id="joinBtn">회원가입</button></div>
+  </header>
+  <nav class="subnav">
+    <div class="wrap subnav-inner">
+      <a href="#jobs">지역별</a><a class="selected" href="#jobs">직업별</a><a href="#jobs">역세권별</a><a href="#jobs">HOT100</a><a href="#jobs">헤드헌팅</a><a href="#jobs">채용관</a><a href="#jobs">큐레이션</a><a href="#jobs">파견대행</a><a href="#jobs">중장년 채용</a>
+    </div>
+  </nav>
+  <main>
+    <section class="search-area">
+      <div class="wrap search-inner">
+        <div class="search-copy">
+          <p class="eyebrow">CAREER · RECRUIT · JOB</p>
+          <h1>나에게 맞는 일자리,<br><span>지금 찾아보세요.</span></h1>
+          <p class="hero-sub">다양한 채용정보를 한눈에 확인하세요.</p>
+        </div>
+        <form class="searchbar" id="searchForm">
+          <span class="search-icon">⌕</span>
+          <input id="searchInput" type="search" placeholder="직무, 회사명, 지역을 검색하세요" autocomplete="off">
+          <button type="button" class="adv-btn" id="advBtn" aria-expanded="false">상세조건<svg viewBox="0 0 12 8" width="10" height="7"><path d="M1 1l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button type="submit">검색</button>
+        </form>
+        <div class="popular"><b>인기검색어</b><button class="keyword">영업</button><button class="keyword">시설관리</button><button class="keyword">운전직</button><button class="keyword">사무직</button></div>
+      </div>
+    </section>
+    <section class="wrap content" id="jobs">
+      <div class="main-col">
+      <div class="section-heading"><h2>회원님을 위한 오늘의 공고</h2><a class="guide" href="#jobs">상품안내 &gt;</a></div>
+      <div class="featured" id="featured"></div>
+      <div class="result-top">
+        <span id="resultCount">검색 결과 <b>9</b>건</span>
+        <select id="sortFilter" aria-label="정렬"><option value="default">최신 등록순</option><option value="salary">급여 높은순</option></select>
+      </div>
+      <div class="layout">
+        <aside class="filters fp collapsed" id="filters">
+          <div class="fp-head"><div><h3>상세검색</h3><p>원하는 조건을 선택하면 공고가 바로 좁혀져요.</p></div><button class="reset" id="resetBtn" type="button"><svg viewBox="0 0 16 16" width="13" height="13"><path d="M13.5 8a5.5 5.5 0 11-1.8-4.1M13.5 2.5v3h-3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>초기화</button></div>
+          <div class="fp-grid">
+            <label><span>지역</span><select id="regionFilter"><option value="">전체 지역</option><option>충남 전체</option><option>천안</option><option>아산</option><option>서산</option><option>당진</option><option>공주</option><option>논산</option><option>홍성</option><option>예산</option><option>보령</option><option>계룡</option><option>대전</option><option>세종</option><option>서울</option></select></label>
+            <label><span>직무</span><select id="catFilter"><option value="">전체 직무</option></select></label>
+            <label><span>고용형태</span><select id="typeFilter"><option value="">전체</option><option>정규직</option><option>계약직</option><option>시간제</option></select></label>
+            <label><span>경력</span><select id="careerFilter"><option value="">무관</option><option>신입</option><option>경력</option></select></label>
+            <label><span>학력</span><select id="eduFilter"><option value="">전체</option><option>고졸</option><option>초대졸</option><option>대졸</option></select></label>
+            <label><span>급여</span><select id="salaryFilter"><option value="">전체</option><option value="250">250만원 이상</option><option value="300">300만원 이상</option><option value="350">350만원 이상</option></select></label>
+          </div>
+          <div class="fp-foot"><div class="chips" id="activeChips"></div><button class="fp-go" id="goBtn" type="button">결과 보기</button></div>
+        </aside>
+        <div class="results">
+          <div id="jobList" class="job-list"></div>
+          <div class="more-wrap hidden" id="moreWrap"><button class="more-btn" id="moreBtn">더 보기</button></div>
+          <div id="emptyState" class="empty hidden"><div class="empty-icon">⌕</div><h3>검색 결과가 없습니다.</h3><p>다른 검색어를 입력하거나 조건을 변경해 보세요.</p><button id="emptyReset">전체 공고 보기</button></div>
+        </div>
+      </div>
+      </div>
+      <aside class="ad-rail" aria-label="광고">
+        <a class="ad ad1" href="#jobs"><span class="ad-tag">AD</span><div class="ad1-copy"><small>2026 하반기</small><b>충남 지역<br>온라인 채용관</b><p>지역 우수기업 120곳<br>동시 채용 진행 중</p><span class="ad-btn">확인하기</span></div><svg class="ad1-art" viewBox="0 0 190 130" preserveAspectRatio="xMidYMax slice" aria-hidden="true"><g fill="#6d94f2" opacity=".5"><rect x="6" y="52" width="34" height="78"/><rect x="46" y="28" width="40" height="102"/><rect x="92" y="62" width="30" height="68"/><rect x="128" y="40" width="40" height="90"/></g><g fill="#fff" opacity=".35"><rect x="12" y="62" width="6" height="6"/><rect x="24" y="62" width="6" height="6"/><rect x="12" y="76" width="6" height="6"/><rect x="24" y="76" width="6" height="6"/><rect x="54" y="40" width="8" height="6"/><rect x="70" y="40" width="8" height="6"/><rect x="54" y="56" width="8" height="6"/><rect x="70" y="56" width="8" height="6"/><rect x="54" y="72" width="8" height="6"/><rect x="70" y="72" width="8" height="6"/><rect x="98" y="74" width="6" height="6"/><rect x="110" y="74" width="6" height="6"/><rect x="136" y="52" width="8" height="6"/><rect x="152" y="52" width="8" height="6"/><rect x="136" y="68" width="8" height="6"/><rect x="152" y="68" width="8" height="6"/></g><circle cx="62" cy="98" r="9" fill="#ffd9a8"/><rect x="51" y="108" width="22" height="24" rx="9" fill="#1b3489"/><circle cx="138" cy="94" r="9" fill="#f4c28a"/><rect x="127" y="104" width="22" height="28" rx="9" fill="#ff8a3d"/></svg></a>
+        <a class="ad ad2" href="#jobs"><span class="ad-tag">AD</span><small>면접 합격률 UP</small><b>AI 이력서 첨삭<br>무료 체험</b><span class="ad-pill">지금 시작하기</span></a>
+        <a class="ad ad3" href="#jobs"><span class="ad-tag">AD</span><small>JOBGRADE 프리미엄</small><b>내 이력서를<br>기업에 직접 노출</b></a>
+      </aside>
+    </section>
+    <section class="wrap detail hidden" id="detailView">
+      <button class="back" id="backBtn">← 채용공고 목록으로</button>
+      <div id="detailContent"></div>
+    </section>
+  </main>
+  <footer><div class="wrap footer-inner"><div class="brand footer-brand"><svg class="brand-mark" aria-hidden="true" viewBox="0 0 32 32"><use href="#jg-mark"/></svg><span class="brand-word"><b>JOB</b>GRADE</span></div><p>JOBGRADE는 영화 촬영을 위해 제작된 가상 채용 플랫폼입니다.</p><div class="footer-small">이용약관　 개인정보처리방침　 고객센터</div><small>© 2026 JOBGRADE. All rights reserved.</small></div></footer>
+  <button class="top-btn" id="topBtn" aria-label="맨 위로"><svg viewBox="0 0 12 8" width="12" height="8"><path d="M1 7l5-5 5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>TOP</span></button>
+  <div class="toast hidden" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>
